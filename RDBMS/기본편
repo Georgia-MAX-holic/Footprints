@@ -1,0 +1,209 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "collapsed_sections": [],
+      "authorship_tag": "ABX9TyPXwELKzmvutwxFlpRxuqUn",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Georgia-MAX-holic/theory/blob/main/RDBMS/%EA%B8%B0%EB%B3%B8%ED%8E%B8\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "# **데이터 베이스 알아보기**\n",
+        "\n",
+        "- 데이터 베이스 :  데이터의 집합 \n",
+        "\n",
+        "\n",
+        "1. DBMS의 정의\n",
+        "\n",
+        "    - DBMS :데이터베이스는 데이터의 집합 , 데이터베이스를 관리하고 운영하는 소프트웨어  (여러 명의 사용자나 응용 프로그램과 공유하고 동시에 접근이 가능해야 합니다.)\n",
+        "\n",
+        "    - 엑셀: 대용량 데이터를 관리하고나 여러 사용자와 공유하는 개념과는 거리가 있어 DBMS라고 부르지 않음 \n",
+        "\n",
+        "    - 데이터베이스 : 여러 명의 예금 계좌 정보를 모아놓은 것이 데이터베이스 \n",
+        "  \n",
+        "\n",
+        "  \n",
+        "    예금계좌 주인, 은행 직원, 인터넷 뱅킹, ATM 기기 등에서 모두 접근이 가능, 이 모든건 DBMS 가 있기 때문"
+      ],
+      "metadata": {
+        "id": "JOm8g29V6z3L"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "2. DBMS \n",
+        "   - SQL : DBMS에 데이터를 구축, 관리하고 활용하기 위해서 사용되는 언어\n",
+        "   \n",
+        "   - DBMS 유형 : 계층형, 망형, 관계형, 객체지향형, 객체 관계형 \n",
+        "\n",
+        "\n",
+        "   1. 계층형 DBMS : 트리 형태, 처음 구성을 완료 후 이를 변경하기 상당히 까다로움 ( 지금은 사용 X) \n",
+        "\n",
+        "   2. 망형 DBMS :  트리+ 서로서로 이동 가능  (그림 검색 후 참조)\n",
+        "   \n",
+        "   3. 관계형 DBMS : 줄여서 RDBMS  , 테이블이라는 최소 단위로 구성되며, 이 테이블은 하나 이상의 열(Column)과 행(Row)로 이루어짐 \n",
+        "\n",
+        "\n",
+        "정리 \n",
+        "\n",
+        "- 데이터베이스 : Database , 약자 : DB  , 데이터의 저장소 \n",
+        "\n",
+        "- 데이터베이스 관리 시스템  : Database Management System , DBMS , 데이터베이스를 운영 /관리하는 소프트웨어 \n",
+        "\n",
+        "- 구조화된 질의 언어 : Structed Query Language ,  약자 : SQL  , 관계형 DBMS에서 사요되는 언어 \n",
+        "\n",
+        "- 관계형 데이터베이스 관리 시스템 : Relational Database Management System 약자 :RDBMS , 테이블이라는 최소 단위로 구성된 DBMS \n",
+        "\n",
+        "- 테이블 : Table , 표 형태로 구성된 2차원 구조, 열과 행으로 이루어져 있으며 RDBMS의 핵심 개체\n",
+        "\n",
+        "- 표준 SQL : Standard SQL  ,  국제표준화기구에서 지정하는 SQL의 표준, 대부분의 DBMS 회사가 표준 SQL을 준수함 \n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "z3NIo3Id6zyK"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "\n"
+      ],
+      "metadata": {
+        "id": "gWOXky-m6zps"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "# **데이터베이스 모델링 ** #\n",
+        "\n",
+        "데이터베이스 모델링 : 사물이나 작업을 DBMS의 데이터베이스 개체로 옮기기 위한 과정 \n",
+        "\n",
+        "\n",
+        "- 데이터 : 하나하나의 단편적인 정보, 개별적인 정보 \n",
+        "\n",
+        "- 테이블 : 회원이나 제품의 데이터를 입력하기 위해 표 형태로 표현한 것을 말함 . \n",
+        "\n",
+        "- 데이터베이스 : 테이블이 저장되는 장소 \n",
+        "\n",
+        "- DBMS : 데이터베이스 관리 시스템 또는 소프트웨어를 말함. \n",
+        "\n",
+        "- 열 : 테이블의 세로. 각 테이블은 여러 개의 열(컬럼, 필드)로 구성됨. 회원 테이블은 3개의 열로, 제품 테이블은 5개의 열로 구성되어 있음 \n",
+        "\n",
+        "- 데이터 형식: 열에 저장될 데이터의 형식을 말함\n",
+        "\n",
+        "- 행: 실질적인 진짜 데이터, 행 데이터라고도 부름 \n",
+        "\n",
+        "- 기본 키 : 기본키열은 각 행을 구분하는 유일한 열. \n",
+        "\n",
+        "- SQL : DBMS가 소통하기 위한 언어\n",
+        "\n",
+        "\n",
+        "데이터베이스 구축 절차 :\n",
+        "데이터베이스 만들기 -> 테이블 만들기 -> 데이터 입력/수정/삭제하기 -> 데이터 조회/활용하기"
+      ],
+      "metadata": {
+        "id": "Xk5Kptqj2LgB"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 데이터 조회 # member는 테이블 \n",
+        "SELECT * FROM member;\n",
+        "\n",
+        "# 데이터 선택해서 조회 \n",
+        "SELECT member_name , member_addr FROM member;\n",
+        "\n",
+        "#멤버 테이블의 전체중 멤버 네임이 아이유인 사람만 출력 \n",
+        "SELECT * FROM member WHERE member_name = \"아이유\";"
+      ],
+      "metadata": {
+        "id": "2OKzTzxDBh14"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "# 주요 용어\n",
+        "\n",
+        "- 스키마 - Schema - (Null) - 데이터베이스와 동일한 용어\n",
+        "\n",
+        "- 문자형 - Character - CHAR - 문자를 입력할 데이터 형식 \n",
+        "\n",
+        "- 정수형 - Integer - INT - 정수를 입력할 데이터 형식 \n",
+        "\n",
+        "- 널 - Null - (null) - 비어 있는 값 \n",
+        "\n",
+        "- 널 허용 안함 - Not Null - NN - 빈 값을 허용하지 않음 \n",
+        "\n",
+        "- 자동 정렬 - (null) - (null) - 기본 키로 설정한 열로 자동 정렬됨 \n",
+        "\n",
+        "- 입력 - INSERT - (null) - 데이터를 입력하는 SQL \n",
+        "\n",
+        "- 수정 - UPDATE - (null) - 데이터를 수정하는 SQL\n",
+        "\n",
+        "- 삭제 - DELETE - (null) - 데이터를 삭제하는 SQL\n",
+        "\n",
+        "- 조회 - SELECT - (null) - 데이터를 조회하는 SQL \n",
+        "\n",
+        "- 조건 - WHERE - (null)  - SELECT 문에서 특정 조건을 조회할 때 사용하는 구문 \n",
+        "\n",
+        "- 예약어 - (null) - (null) - 기존에 약속된 SQL, SELECT , FROM ,WHERE 등 \n",
+        "\n",
+        "- 세미콜론(;) -(null) - (null) - SQL의 끝을 표시하는 기호 \n",
+        "\n",
+        "- 인텔리센스 - IntellSense -(nul) - SQL의 글자가 미리 제시되는 워크벤치의 기능 "
+      ],
+      "metadata": {
+        "id": "ru0B27O_eP_t"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [],
+      "metadata": {
+        "id": "alGVdxR7fkET"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [],
+      "metadata": {
+        "id": "tm0UmVlRexpt"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [],
+      "metadata": {
+        "id": "miT2uGuLhOWw"
+      }
+    }
+  ]
+}
