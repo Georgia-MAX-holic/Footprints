@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load bootstrap4 %}
+{% block content %}
+
+    <div>
+        <div class="mb-4">
+            <h4>Delete Article {{ target_comment.content }}</h4>
+        </div>
+        <form action="{% url 'commentapp:delete' pk=target_comment.pk %}" method="post" >
+            {% csrf_token %}
+
+            <input type="submit" class="btn btn-dark rounded-pill col-6 mt-3">
+        </form>
+    </div>
+{% endblock %}

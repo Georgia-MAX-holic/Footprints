@@ -1,0 +1,15 @@
+.Skarea_footer{
+    font-family: 'Song Myung', serif;
+}
+.footer{
+    text-align:center; margin-top:2rem;
+}
+.menu{
+font-size: .6rem;
+}
+
+@media screen and (max-width:500px) {
+    html{
+        font-size: 13px;
+    }
+}
