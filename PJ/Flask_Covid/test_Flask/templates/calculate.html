@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="calculate">
+        <h1> Calculate Covid Confirmed</h1><br>
+        <form method="POST", action="{{url_for('home')}}">
+            <b> 인구 :  <input type="number", name='region_p', placeholder="region_p"> <br><br>
+            사망자 :  <input type="number", name='death', placeholder="death"> <br><br>
+            누적확진자 :  <input type="number", name='confirm', placeholder="confirm"> <br><br></b>
+
+            <input type="submit" , value='Enter' >            
+        </form>
+</div>
+{% endblock %}
+
+
+

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<class = front >
+<div style="text-align:center; font-size:1.5rem ; margin: 4rem 0; position: static; color:black;">
+<button  style="position: static;">         
+    <a href = "https://datastudio.google.com/reporting/f3e1b92d-a047-4e00-9f3d-884df6ac0ada">
+        <span style="color:black;">DashBoard</span>
+    </a>
+</button>
+
+<button  style="position: static;">  
+    <a href ="{{url_for('calculate')}}">
+        <span style="color:black;">calculate</span>
+    </a>
+</button>
+
+
+<button  style="position: static;">  
+    <a href ="{{url_for('News')}}">
+        <span style="color:black;">News[서비스 준비중]</span>
+    </a>
+</button>
+
+
+</div>
+</class>
+{% endblock %}
+
+<!-- 버튼 디자인 : http://designbase.co.kr/webcoding-6/-->
+<!-- 배경화면 디자인 : https://myhappyman.tistory.com/2-->
