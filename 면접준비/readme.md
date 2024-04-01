@@ -1,1 +1,4 @@
-### one 
+### sql 
+
+1. NAME 컬럼의 중복을 제거하고 COUNT 할때 
+SELECT COUNT(DISTINCT (NAME)) FROM ANIMAL_INS
