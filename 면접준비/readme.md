@@ -15,3 +15,6 @@
         WHEN OUT_DATE >= "2022-05-02" THEN "출고대기"
         ELSE "출고미정"
         END 
+
+### Date 포맷팅 
+      DATE_FORMAT(OUT_DATE, '%Y-%m-%d') AS OUTDATE
