@@ -18,3 +18,9 @@
 
 ### Date 포맷팅 
       DATE_FORMAT(OUT_DATE, '%Y-%m-%d') AS OUTDATE
+
+### 컬럼 텍스트 합치기 
+      CONCAT(USERS.CITY, " " , USERS.STREET_ADDRESS1 , " " , USERS.STREET_ADDRESS2) AS 전체주소 , 
+### 하이픈 넣기 
+      CONCAT (SUBSTR(USERS.TLNO, 1, 3) , "-" , SUBSTR(USERS.TLNO, 4, 4 ) ,"-", SUBSTR(USERS.TLNO, 8 ,4 )) AS 전화번호 
+      -- 첫 숫자 ~ 3까지 ( 010 ) , 4번째 숫자 ~ 4번째 까지 ( 1234 ) , 8번쨰 ~ 4 번째 까지 ( 5678 ) 
