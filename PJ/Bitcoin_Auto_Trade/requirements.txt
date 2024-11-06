@@ -5,3 +5,5 @@ ta
 selenium
 webdriver-manager
 Pillow
+beautifulSoup
+schedule
